@@ -1,0 +1,95 @@
+<app-header></app-header>
+<div class="content-page">
+    <div class="blog-users">
+        <div class="container">
+            <div class="row blog-head">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="pagination-info">
+                        2,147 <span>Users</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="action-buttons">
+                        <button class="btn btn-add" type="button" (click)="addUser()">Create New User</button>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-content">
+                <div class="d-flex justify-content-center" *ngIf="loading">
+                    <mat-spinner></mat-spinner>
+                </div>
+                <div class="table-responsive" *ngIf="!loading">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    Expert Name
+                                </th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Country</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users;let i = index">
+                                <th scope="row">
+                                    <div class="item-user">
+                                        <div class="img_thumbnail">
+                                            <img src="assets/img/users/1.png" alt="">
+                                        </div>
+                                        <div class="innter-item">
+                                            <h4>{{user.name}}</h4>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td>
+                                    {{user.email}}
+                                </td>
+                                <td>
+                                    {{user.address.city}}
+                                </td>
+                                <td>
+                                    {{user.phone}}
+                                </td>
+                                <td>
+                                    <div class="list-actions">
+                                        <button type="button">
+                                            <img src="assets/img/svg/view-icon.svg" alt="">
+                                        </button>
+                                        <button type="button" (click)="deleteUser(i)">
+                                            <img src="assets/img/svg/delete-icon.svg" alt="">
+                                        </button>
+                                        <button type="button" (click)="editUser(user,i)">
+                                            <img src="assets/img/svg/edit-icon.svg" alt="">
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="blog-footer">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

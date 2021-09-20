@@ -1,0 +1,48 @@
+.navbar{
+    background-color: #fff !important;
+
+    .navbar-nav{
+        .nav-item{
+            margin-left: .3125rem;
+            .nav-link{
+                font-size: 16px;
+                font-weight: 600;
+                color: #333;
+                padding: .625rem .9375rem;
+                position: relative;
+                &:hover{
+                    color: $primary;
+                }
+                &.active{
+                    color: $primary;
+                    &::after{
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        pointer-events: none;
+                        right: 0;
+                        width: 50%;
+                        height: 2px;
+                        background-color: $primary;
+                        margin: auto;
+                        left: 0;
+                    }
+                }
+            }
+            .btn-lang{
+                border: 1px solid $primary;
+                background-color: transparent;
+                display: block;
+                padding: 3px 10px;
+                border-radius: 4px;
+                color: $primary;
+                margin-top: 0.425rem;
+                &:hover{
+                    background-color: $primary;
+                    color:#fff
+                }
+            }
+        }
+    }
+}

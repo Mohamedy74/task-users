@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "assets/css/variables";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap";
+@import "assets/css/header";
+@import "assets/css/footer";
+html, body { height: 100%; }
+body{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    font-size:1.125rem;
+    line-height:1.5rem;
+    color:#333;
+    font-family:'Montserrat', sans-serif;
+    background-color:#FBFEFF !important
+}
+.content-page{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.blog-users{
+    .blog-head{
+        margin-bottom: 3rem;
+        align-items: center;
+        .pagination-info{
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.63;
+            color: #333;
+            span{
+                font-size: 16px;
+                font-weight: 500;
+                color: #666666;
+            }
+        }
+        .action-buttons{
+            text-align: right;
+            .btn-add{
+                font-size: 13px;
+                font-weight: 600;
+                text-align: center;
+                color: #fff;
+                padding: 15px 30px 15px;
+                border-radius: 25px;
+                box-shadow: 0 5px 40px 0 rgba(0, 113, 188, 0.3);
+                background-image: linear-gradient(to right, $blue, $primary);
+    
+            }
+        }
+    }
+    .blog-content{
+        table{
+            border-collapse:separate;
+            border-spacing:0 15px;
+            thead{
+                tr{
+                    th{
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #666;
+                        border: none;
+                        text-align: center;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    box-shadow: 0 2px 4px 0 rgba(45, 88, 138, 0.1);
+                    background-color: #fff;
+                    border-radius: 6px;
+                    &:hover{
+                        background-color: #fbfdfe;
+                    }
+                    td,th{
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #333333;
+                        padding: 20px 10px;
+                        text-align: center;
+                        vertical-align: middle;
+                        .item-user{
+                            display:flex;
+                            align-items:center;
+                            .img_thumbnail{
+                                width: 50px;
+                                height: 50px;
+                                margin-right: 10px;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .innter-item{
+                                h4{
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                    color: #333;
+                                }
+                            }
+                        }
+                    }
+                    td{
+                        .list-actions{
+                            button{
+                                display: inline-block;
+                                font-weight: 400;
+                                line-height: 1.5;
+                                color: #212529;
+                                text-align: center;
+                                text-decoration: none;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                -webkit-user-select: none;
+                                user-select: none;
+                                background-color: transparent;
+                                border: 1px solid transparent;
+                                font-size: 1rem;
+                                border-radius: 50%;
+                                padding: 10px 13px;
+                                &:hover{
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<div mat-dialog-content class="mat-dialog-content">
+    <div class="py-3 px-3 mt-0 d-flex align-items-center justify-content-between border-bottom bg-white">
+        <h5 class="text-5 font-weight-600 mb-0">
+            {{data.title}} User
+        </h5>
+        <button type="button" class="btn-close font-weight-400 text-30 w-auto" (click)="onNoClick()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="py-3 px-3">
+        <!-- FORM -->
+        <form class="form" [formGroup]="userFormGroup">
+            <!-- FORM ROW -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="" formControlName="name">
+                <small class="text-danger text-12 mt-1 d-block"
+                    *ngIf="userFormGroup.get('name')?.hasError('required') && userFormGroup.get('name')?.touched">
+                    Name required
+                </small>
+            </div>
+            <!-- /FORM ROW -->
+            <!-- FORM ROW -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                    formControlName="email">
+                <small class="text-danger text-12 mt-1 d-block"
+                    *ngIf="userFormGroup.get('email')?.hasError('required') && userFormGroup.get('email')?.touched">
+                    Email required
+                </small>
+                <small class="text-danger text-12 mt-1 d-block"
+                    *ngIf="userFormGroup.get('email')?.hasError('email') && userFormGroup.get('email')?.touched">
+                    Must be email
+                </small>
+            </div>
+            <!-- /FORM ROW -->
+            <!-- FORM ROW -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="" formControlName="phone">
+                <small class="text-danger text-12 mt-1 d-block"
+                    *ngIf="userFormGroup.get('phone')?.hasError('required') && userFormGroup.get('phone')?.touched">
+                    Phone required
+                </small>
+                <!--  <small class="text-danger text-12 mt-1 d-block"
+                    *ngIf="userFormGroup.get('phone')?.hasError('pattern') && userFormGroup.get('phone')?.touched">
+                    Phone must be number
+                </small> -->
+            </div>
+            <!-- /FORM ROW -->
+
+
+            <div class="d-flex justify-content-end">
+                <!-- BUTTON -->
+                <button class="btn btn-outline-secondary btn-rounded mx-2" (click)="onNoClick()">
+                    Cancel
+                </button>
+                <!-- /BUTTON -->
+                <!-- BUTTON -->
+                <button class="btn btn-danger btn-rounded" [disabled]="!userFormGroup.valid" (click)="confirm()">
+                    Submit
+                </button>
+                <!-- /BUTTON -->
+            </div>
+        </form>
+        <!-- /FORM -->
+    </div>
+</div>

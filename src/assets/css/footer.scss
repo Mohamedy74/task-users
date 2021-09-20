@@ -1,0 +1,122 @@
+.footer-section {
+	background-color: $secondary;
+	position: relative;
+	color: #fff;
+	font-size: 15px;
+	.footer-top {
+		padding: 10px 0px 10px 0px;
+		position: relative;
+		.logo {
+			padding: 15px;
+			width: 100%;
+			a {
+				-webkit-transition: none;
+				-o-transition: none;
+				transition: none;
+			}
+			.logo-main {
+				display: block;
+			}
+			img {
+				display: inline-block;
+				vertical-align: middle;
+				max-width: 100%;
+			}
+		}
+		.menu {
+			padding: 15px;
+			text-align: left;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				margin-bottom: 0;
+				margin-left: 28px;
+				a {
+					font-size: 1.125rem;
+					font-weight: 600;
+					line-height: 1.125rem;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+		.socials {
+			.social {
+				padding: 0;
+				list-style: none;
+				margin: 0;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				>li {
+					padding: 0;
+					display: inline-block;
+					vertical-align: middle;
+					margin-left: 4px;
+					margin-bottom: 5px;
+				}
+				a {
+					color: #7E8890;
+					font-size: 14px;
+					width: 40px;
+					height: 40px;
+					background-color: rgba(255,255,255,0.1);
+					padding: .1875rem;
+					border-radius: 50%;
+					align-items: center;
+					justify-content: center;
+					display: flex;
+					&:hover {
+						background-color: $primary;
+						color: #FFFFFF;
+					}
+				}
+			}
+		}
+	}
+	.footer-bottom {
+		position: relative;
+		background-color: rgba(0,0,0,0.2);
+		.copyright {
+			padding: 32px 015px 32px 15px;
+			text-align: center;
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	footer {
+		.copyright {
+			p {
+				font-size: 13px;
+			}
+		}
+		.ft-bottom-right {
+			padding-top: 15px;
+			text-align: center !important;
+		}
+	}
+}
+@media (max-width: 991px) {
+	.footer-section {
+		.footer-top {
+			.socials {
+				.social {
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					margin-top: 1.875rem;
+				}
+			}
+			.logo {
+				text-align: center;
+			}
+		}
+	}
+}
